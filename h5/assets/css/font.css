@@ -1,0 +1,9 @@
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../fonts/font.ttf') format('truetype');
+}
+
+.myfont {
+    font-family: 'MyCustomFont', sans-serif;
+}
