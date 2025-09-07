@@ -7,14 +7,25 @@ const columns = [{
 }, {
     field: 'plot',
     title: '简介'
-}]
+}
+, {
+    title: '操作',
+    formatter: function (value, row) {
+        let str=[];
+        str.push('<a class="btn btn-info" href="/edit?id='+row.id+'">编辑</a>');
+        str.push('<a style="margin-left:10px" class="btn btn-danger" href="/delete?id='+row.id+'">删除</a>');
+        return str.join('');
+    }
+}
+
+]
 
 
 
 
 /***
-* 
-*/
+ * 
+ */
 
 $('#table').bootstrapTable({
     url: 'http://fa.cc/md/sqllite.php',
