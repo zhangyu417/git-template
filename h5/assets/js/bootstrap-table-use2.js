@@ -1,8 +1,8 @@
-const columns=[{
-    field: '_id.$oid',
+const columns = [{
+    field: 'id',
     title: '编号'
 }, {
-    field: 'title',
+    field: 'name',
     title: '名称'
 }, {
     field: 'plot',
@@ -12,15 +12,22 @@ const columns=[{
 
 
 
+/***
+* 
+*/
 
 $('#table').bootstrapTable({
-    url: 'http://fa.cc/md/md.php',
-    //classes: 'table table-hover',
+    url: 'http://fa.cc/md/sqllite.php',
+    method: 'GET',
+    dataType: "json",
+    dataField: 'rows',
+    sidePagination: 'server',
+    classes: 'table table-hover',
     pagination: true,
-    pageSize:3,
-    pageList: [1,2,3,4,5,'All'],
+    pageSize: 5,
+    pageList: [1, 2, 3, 4, 5, 'All'],
 
 
     search: true,
-    columns:columns,
+    columns: columns,
 })
